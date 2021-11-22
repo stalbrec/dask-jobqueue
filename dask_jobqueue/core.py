@@ -332,7 +332,7 @@ class Job(ProcessInterface, abc.ABC):
         self._job_script_prologue = job_script_prologue
 
         # dask-worker command line build
-        dask_worker_command = "%(python)s -m distributed.cli.dask_worker" % dict(
+        dask_worker_command = "pwd;%(python)s -m distributed.cli.dask_worker" % dict(
             python=python
         )
         command_args = [dask_worker_command, self.scheduler]
